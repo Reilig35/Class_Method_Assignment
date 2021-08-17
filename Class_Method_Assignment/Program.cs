@@ -7,17 +7,30 @@ namespace Class_Method_Assignment
     {
         static void Main(string[] args)
         {
-            //Part 1 start
+            //Static Class Method Start
+            Console.WriteLine("Please type your first name:");
+            string fNname = Console.ReadLine();
+
+            Console.WriteLine("Please type your last name:");
+            string lNname = Console.ReadLine();
+
+            Static_Class.YourName(fNname, lNname);
+            //Static Class Method End
+            
+            
+            //Divided by two method Start
             Console.WriteLine("Please enter a number to half it:\n");
             int num1 = Convert.ToInt32(Console.ReadLine());
             
             myMethod halfMyInput = new myMethod();
             halfMyInput.halfUserInput(num1);
 
-            //Part 1 End
+            //Divided by two method End
 
-            //Part 2 start
-            Console.WriteLine("Please type a number:\n");
+            
+            //Overload Challenge Start
+            //The Original Method Start
+            Console.WriteLine("Please type a whole number to multiply by 56:\n");
             int num2 = Convert.ToInt32(Console.ReadLine());
             
             myMethod times56 = new myMethod();
@@ -25,47 +38,56 @@ namespace Class_Method_Assignment
 
             int aF = a;
 
-            Console.WriteLine($"{num2} times 56 = {a}");
-            //Part 2 end
+            Console.WriteLine($"{num2} times 56 = {a}\n\n\n");
+            //The Original Method End
 
-            //Part 3 Overload a method start
-            Console.WriteLine("Please type a number with a decimal point:\n");
+
+            //The Overloaded Method Start
+            Console.WriteLine("Please type a number with a decimal point to multiply by 56:\n");
             string num3s = Console.ReadLine();
             float num3 = float.Parse(num3s);
 
             myMethod times56Dec = new myMethod();
             float b  = times56.mutli56(num3);
 
-            Console.WriteLine($"{num3} times 56 = {b}");
-            //Part 3 Overload a method start
-
-
-            //Adding in list to prove functions returns a parameter end
-
+            Console.WriteLine($"{num3} times 56 = {b}\n\n\n");
+            //The Overloaded Method End
+            //Overload Challenge End
 
 
 
-            // Declare two without assigning a value.
+            // Call the Add method and pass it as an out parameter Start
             int num5;
             int num6;
 
             myMethod Add = new myMethod();
-            // Call the Add method and pass it as an out parameter.
-
+            
             Add.Add(out num5, out num6);
-            Console.WriteLine($"\n\n\nThe first out is {num5}");
-            Console.WriteLine($"\n\n\nThe second out is {num6}");
+            Console.WriteLine($"\n\n\nThe first out is {num5}\n");
+            Console.WriteLine($"\n\n\nThe second out is {num6}\n");
 
             List<float> myList = new List<float>();
             myList.Add(num5);
             myList.Add(num6);
 
-            Console.WriteLine($"\n\n\n{myList[0]} and {myList[1]} have been added to mylist");
-    
+            Console.WriteLine($"\n\n\n{myList[0]} and {myList[1]} have been added to mylist\n\n");
+
+            // Call the Add method and pass it as an out parameter End
+
+            //Another Static function for practise
+            Console.WriteLine("\n\n\nEnter a speed in MPH to convert to km/h:\n");
+            double mph = Double.Parse(Console.ReadLine());
+            
+            Static_Class.ToKPH(mph);
         }
-    
+
     }
 }
+
+
+
+
+     
 
           
 
